@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI ID Display with Copy Option</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>UPI ID</h1>
+        <p id="upi-id" class="upi-id">8948681782@axl</p>
+        <button onclick="copyUPI()">Copy UPI ID</button>
+        <p id="copy-message"></p>
+    </div>
+
+    <script>
+        // Function to copy the UPI ID to clipboard
+        function copyUPI() {
+            const upiId = document.getElementById('upi-id').innerText;
+            navigator.clipboard.writeText(upiId).then(function() {
+                document.getElementById('copy-message').innerText = "UPI ID copied to clipboard!";
+            }).catch(function() {
+                document.getElementById('copy-message').innerText = "Failed to copy UPI ID.";
+            });
+        }
+    </script>
+</body>
+</html>
